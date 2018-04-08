@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './swiper.css';
-import { Button,Panel,PanelGroup} from 'react-bootstrap';
+import { Carousel} from 'react-bootstrap';
 import imgs from './imgs'
 
 class Swiper extends Component {
@@ -17,18 +17,23 @@ class Swiper extends Component {
         this.setState({ activeKey });
     }
   render() {
-    const links = [
-        {title:'MATERIAL', links:['Metal','Acetate','TR','Titanium']},
-        {title:'FRAME', links:['Full Frame','Semi-rimless','Rimless']},
-    ];
     return (
-        <div>
+        <Carousel>
             {imgs.map((i)=>{
                 return (
-                    <img src={i} key="i"/>
+                    <Carousel.Item>
+                        <img className="swiper-img" alt="900x500" src={i} />
+                    </Carousel.Item>
                 )
             })}
-        </div>
+            {/* <Carousel.Item>
+                
+                <Carousel.Caption>
+                <h3>First slide label</h3>
+                <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                </Carousel.Caption>
+            </Carousel.Item> */}
+        </Carousel>
       )
   }
 }
