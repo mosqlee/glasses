@@ -74,17 +74,34 @@ class Counter extends React.Component {
           .panel {
             border: none!important;
           }
+          .enter-email-container {
+            display: flex;
+            
+            margin: 50px 0 20px;
+            width: 100%;
+            height: 120px;
+            background: url('../static/img/search-bg.png')
+          }
         `}
     </style>
         <Head>
-          <title>12312</title>
+          <title>Firmoo</title>
           <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"></link>
           <meta name="viewport" content="initial-scale=1.0, width=device-width" />
           <meta name="xxxx" content="123123" />
         </Head>
         <NavG></NavG>
         <Swiper></Swiper>
-        
+        <div className="container">
+          <div className="row">
+            <div className="col-md-12">
+              <div className="enter-email-container">
+
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
     )
   }

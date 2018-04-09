@@ -8,7 +8,7 @@ class NavG extends Component {
     //   const navList = ['EYEGLASSES','SUNGLASSES',''];
       return (
         <header>
-            <style scope jsx>{`
+            <style global jsx>{`
             .glasses-title {
                 color: #fff;
                 font-size: 14px;
