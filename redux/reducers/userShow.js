@@ -1,36 +1,38 @@
-import { GET_SWIPER_INFO_REQUEST, GET_SWIPER_INFO_SUCCESS, GET_SWIPER_INFO_FAIL} from '../actions/swiperInfo'
+import { GET_USER_LIST_REQUEST, GET_USER_LIST_SUCCESS, GET_USER_LIST_FAIL } from '../actions/userShow'
 
 const initState = {
     isLoading: false,
-    swiperInfo: { swiperInfo: [] },
+    userList: { userList: [] },
     errorMsg: ''
 }
 
 export default function reducer(state = initState, action) {
+    console.log(action.result)
     switch (action.type) {
-        case GET_SWIPER_INFO_REQUEST:
+
+        case GET_USER_LIST_REQUEST:
             return {
                 ...state,
                 isLoading: true,
-                swiperInfo: { swiperInfo: [] },
+                userList: { userList: [] },
                 errorMsg: ''
             }
             break;
-        case GET_SWIPER_INFO_SUCCESS:
-            console.log(action.result.data.data)
+        case GET_USER_LIST_SUCCESS:
+            console.log(action.result.data.data.list)
             return {
                 ...state,
                 isLoading: false,
-                swiperInfo: {swiperInfo: action.result.data.data},
+                userList: { userList: action.result.data.data.list },
                 errorMsg: ''
             }
             console.log(state)
             break;
-        case GET_SWIPER_INFO_FAIL:
+        case GET_USER_LIST_FAIL:
             return {
                 ...state,
                 isLoading: false,
-                swiperInfo: { swiperInfo: [] },
+                userList: { userList: [] },
                 errorMsg: '请求错误'
             }
             break;

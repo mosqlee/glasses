@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Carousel} from 'react-bootstrap';
 import imgs from './imgs'
 import { connect } from 'react-redux'
-import getSwiperInfo from '../../redux/actions/swiperInfo'
 class Swiper extends Component {
     constructor(props, context) {
         super(props, context);
@@ -22,6 +21,7 @@ class Swiper extends Component {
             <style scope jsx>{`
                 .swiper-img {
                     width: 100%;
+                    height: 500px;
                 }
                 `}
             </style>
@@ -29,7 +29,7 @@ class Swiper extends Component {
                   {swiperInfo.swiperInfo.map((i)=>{
                     return (
                         <Carousel.Item key={i}>
-                            <img className="swiper-img" height={500} alt="900x500" src={i}/>
+                            <img className="swiper-img" alt="900x500" src={i}/>
                         </Carousel.Item>
                     )
                 })}
@@ -45,4 +45,4 @@ class Swiper extends Component {
       )
   }
 }
-export default connect((state) => ({ swiperInfo: state.swiperInfo }), { getSwiperInfo})(Swiper)
+export default connect((state) => ({ swiperInfo: state.swiperInfo }))(Swiper)

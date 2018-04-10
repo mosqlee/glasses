@@ -3,7 +3,8 @@ import { composeWithDevTools } from 'redux-devtools-extension'
 import thunkMiddleware from 'redux-thunk'
 import promiseMiddleware from './redux/middleware/promiseMid'
 import combineReducer from './redux/reducers'
-import axios from 'axios'
+import * as getSwiperInfo from './redux/actions/swiperInfo'
+
 const exampleInitialState = {
     lastUpdate: 0,
     light: false,
