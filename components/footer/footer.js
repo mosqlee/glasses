@@ -40,6 +40,9 @@ class Footer extends Component {
                         color: #00A2E1;
                     }
                     .ad-talk {
+                        margin-left: 30px;
+                        margin-top: 10px;
+                        width: 1110px;
                         padding-top: 10px;
                         border-top: solid 1px #d8d8d8;
                     }
@@ -94,7 +97,22 @@ class Footer extends Component {
                         ></Card>
                     </div>
                 </div>
-                <p className="ad-talk">One-on-One Service, Save Up to 90%</p>
+                <div className="col-md-12">
+                
+                </div>
+                <p className="ad-talk col-md-12">One-on-One Service, Save Up to 90%</p>
+                <p className="company-email">
+                Get Free Glasses Via YouTube Cooperation
+                <i className="glyphicon glyphicon-envelope"></i>
+                service@firmoo.com
+                </p>
+                {/* 社交媒体 */}
+                <div className="media-container">
+                    <a>
+                        
+                    </a>
+                </div>
+                
             </footer>
         )
     }

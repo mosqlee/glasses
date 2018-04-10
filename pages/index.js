@@ -14,6 +14,7 @@ import { getUserList } from '../redux/actions/userShow'
 import GlassList from '../components/glass-list/glass-list'
 import Footer from '../components/footer/footer'
 import SaleCode from '../components/saleCode/saleCode'
+import FooterWrap from '../components/footer-wrap/footer-wrap'
 class Counter extends React.Component {
       // 服务器渲染数据区域
   static getInitialProps ({ store, isServer }) {
@@ -165,6 +166,7 @@ class Counter extends React.Component {
             <Footer></Footer>
           </div>
         </div>
+        <FooterWrap></FooterWrap>
       </div>
     )
   }
