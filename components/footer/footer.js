@@ -120,13 +120,13 @@ class Footer extends Component {
                 
                 </div>
                 <p className="ad-talk col-md-12">One-on-One Service, Save Up to 90%</p>
-                <p className="company-email">
+                <p className="company-email col-md-12">
                 Get Free Glasses Via YouTube Cooperation
                 <i className="glyphicon glyphicon-envelope"></i>
                 service@firmoo.com
                 </p>
                 {/* 社交媒体 */}
-                <div className="media-container">
+                <div className="media-container col-md-12">
                     {follow.map(i=>{
                         return (
                             <a title={`Follow on ${i}`} href="#">

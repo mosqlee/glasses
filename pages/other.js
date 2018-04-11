@@ -7,9 +7,10 @@ import Page from '../components/Page'
 import 'isomorphic-unfetch'
 class Counter extends React.Component {
   static async getInitialProps ({ store, isServer }) {
-    const res = await fetch('https://api.github.com/repos/zeit/next.js')
+    const res = await fetch('http://localhost:3000/static/mockAvatar.json')
     const json = await res.json()
-    return { stars: json.stargazers_count }
+    console.log(json)
+    return { stars: json.data.list.length}
     // store.dispatch(serverRenderClock(isServer))
     // store.dispatch(addCount())
     // return { isServer }
@@ -33,7 +34,7 @@ class Counter extends React.Component {
         {/* <Page title='Other Page' linkTo='/' /> */}
         return (
       <div>
-          <p>Next.js has {this.props.stars} ⭐️</p>
+          <p>has how many avatar {this.props.stars} </p>
           {/* <Link prefetch href='/'><a>How about preact?</a></Link> */}
         </div>
       </div>
