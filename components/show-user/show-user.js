@@ -4,11 +4,15 @@ import { connect } from 'react-redux'
 import {getUserList} from '../../redux/actions/userShow'
 
 class ShowUser extends Component {
-    refresh = ()=>{
-        this.props.getUserList()
+    count = 1;
+    refresh = (e)=>{
+        this.count++;
+        const url = this.count%2 === 0? '1':'2';
+        this.props.getUserList(url)
     }
     render() {
-        const { userList, isLoading, errorMsg } = this.props.userList;
+        const { userList,preList, isLoading, errorMsg } = this.props.userList;
+        const list = isLoading ? preList : userList;
         return (
             <div>
                 <style scope jsx>{`
@@ -30,20 +34,20 @@ class ShowUser extends Component {
                     }
                 `}
                 </style>
-                <div className="col-md-12 text-right refresh" onClick={this.refresh}>
-                    <i className="glyphicon glyphicon-refresh"></i>
-                trade
+                <div className="col-md-12 text-right">
+                    <a href="javascript:void(0)" className="refresh" onClick={this.refresh}>
+                        <i className="glyphicon glyphicon-refresh"></i>
+                        trade
+                    </a>
+
                 </div>
                 {
-                    userList.userList.map((i,index) => {
-                        const a = !isLoading ? (
+                    list.userList.map((i,index) => {
+                        return (
                             <div className={index === 0 ? "col-md-4 avatar-l" : "col-md-2 avatar-s"} key={index}>
                                 <img className="avatar" src={i} alt="userAvatar" />
                             </div>
-                        ): (
-                            <h1 className="te">loading</h1>
                         )
-                        return a
                     })
                 }
             </div>

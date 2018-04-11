@@ -1,13 +1,8 @@
-import React, { Component } from 'react';
+// SFC=stateless function component 40行》30行
 
-class Card extends Component {
-    render() {
-        const img = this.props.img;
-        const title = this.props.title;
-        const subtitle = this.props.subtitle;
-        return (
-            <div className="card-container">
-                <style scope jsx>{`
+const Card = ({ title, subtitle,img}) => 
+    <div className="card-container">
+        <style scope jsx>{`
                     .card-container {
                         background-color: #f6f6f6;
                         cursor: pointer;
@@ -25,16 +20,13 @@ class Card extends Component {
                         height: auto;
                     }
                 `}</style>
-                <img className="img-s" src={img} alt="img"/>
-                {
-                    title ? (<p>
-                        <b>{title}</b>
-                        {subtitle}
-                    </p>):(<br/>)
-                }
+        <img className="img-s" src={img} alt="img" />
+        {
+            title ? (<p>
+                <b>{title}</b>
+                {subtitle}
+            </p>) : (<br />)
+        }
 
-            </div>
-        )
-    }
-}
+    </div>
 export default Card

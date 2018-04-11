@@ -129,7 +129,7 @@ class Footer extends Component {
                 <div className="media-container col-md-12">
                     {follow.map(i=>{
                         return (
-                            <a title={`Follow on ${i}`} href="#">
+                            <a title={`Follow on ${i}`} href="#" key={i}>
                                 <svg className="icon" aria-hidden="true">
                                     <use xlinkHref={`#icon-${i}`} />
                                 </svg>

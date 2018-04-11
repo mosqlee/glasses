@@ -2,12 +2,13 @@ import { GET_USER_LIST_REQUEST, GET_USER_LIST_SUCCESS, GET_USER_LIST_FAIL } from
 
 const initState = {
     isLoading: false,
+    preList: { userList: [] },
     userList: { userList: [] },
     errorMsg: ''
 }
 
 export default function reducer(state = initState, action) {
-    console.log(action.result)
+    console.log(state, action.type)
     switch (action.type) {
 
         case GET_USER_LIST_REQUEST:
@@ -23,6 +24,7 @@ export default function reducer(state = initState, action) {
             return {
                 ...state,
                 isLoading: false,
+                preList: { userList: action.result.data.data.list },
                 userList: { userList: action.result.data.data.list },
                 errorMsg: ''
             }
