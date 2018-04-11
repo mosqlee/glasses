@@ -4,20 +4,23 @@ import { bindActionCreators } from 'redux'
 import { initStore, startClock, addCount, serverRenderClock } from '../store'
 import withRedux from '../utils/withRedux'
 import Page from '../components/Page'
-
+import 'isomorphic-unfetch'
 class Counter extends React.Component {
-  static getInitialProps ({ store, isServer }) {
-    store.dispatch(serverRenderClock(isServer))
-    store.dispatch(addCount())
-    return { isServer }
+  static async getInitialProps ({ store, isServer }) {
+    const res = await fetch('https://api.github.com/repos/zeit/next.js')
+    const json = await res.json()
+    return { stars: json.stargazers_count }
+    // store.dispatch(serverRenderClock(isServer))
+    // store.dispatch(addCount())
+    // return { isServer }
   }
 
   componentDidMount () {
-    this.timer = this.props.startClock()
+    // this.timer = this.props.startClock()
   }
 
   componentWillUnmount () {
-    clearInterval(this.timer)
+    // clearInterval(this.timer)
   }
 
   render () {
@@ -27,7 +30,12 @@ class Counter extends React.Component {
           <title>My page title</title>
           <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         </Head>
-        <Page title='Other Page' linkTo='/' />
+        {/* <Page title='Other Page' linkTo='/' /> */}
+        return (
+      <div>
+          <p>Next.js has {this.props.stars} ⭐️</p>
+          {/* <Link prefetch href='/'><a>How about preact?</a></Link> */}
+        </div>
       </div>
     )
   }
