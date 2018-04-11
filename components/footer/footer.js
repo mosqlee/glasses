@@ -4,6 +4,9 @@ import SaleCode from './../saleCode/saleCode';
 import Card from './../card/card';
 class Footer extends Component {
     render(){
+        const follow = [
+            'facebook', 'twitter', 'Pinterest', 'instagram','youtube'
+        ];
         return(
             <footer>
                 <style scope jsx>{`
@@ -45,6 +48,22 @@ class Footer extends Component {
                         width: 1110px;
                         padding-top: 10px;
                         border-top: solid 1px #d8d8d8;
+                    }
+                    .media-container{
+                        display: flex;
+                        justify-content: center;
+                    }
+                    .media-container a {
+                        display: block;
+                    }
+                    .media-container a:hover{
+                        transform: translateY(-4px)
+                    }
+                    .icon {
+                        width: 32px; height: 32px;
+                        vertical-align: -0.15em;
+                        fill: currentColor;
+                        overflow: hidden;
                     }
                 `}
                 </style>
@@ -108,9 +127,16 @@ class Footer extends Component {
                 </p>
                 {/* 社交媒体 */}
                 <div className="media-container">
-                    <a>
-                        
-                    </a>
+                    {follow.map(i=>{
+                        return (
+                            <a title={`Follow on ${i}`} href="#">
+                                <svg className="icon" aria-hidden="true">
+                                    <use xlinkHref={`#icon-${i}`} />
+                                </svg>
+                            </a>
+                        )
+                    })}
+
                 </div>
                 
             </footer>

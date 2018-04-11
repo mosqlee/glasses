@@ -49,6 +49,12 @@ class NavG extends Component {
                 width: 100px;
                 height: 300px;
                 }
+                .nav-b-container a{
+                    color: #fff!important;
+                }
+                .nav-b-container a:hover{
+                    text-decoration: underline;
+                }
                 .glass-nav-static {
                 height: 71px;
                 background: #fff;

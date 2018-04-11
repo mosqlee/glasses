@@ -148,6 +148,7 @@ class Counter extends React.Component {
           <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"></link>
           <meta name="viewport" content="initial-scale=1.0, width=device-width" />
           <meta name="xxxx" content="123123" />
+          <script src="../static/iconfont.js"></script>
         </Head>
         <NavG></NavG>
         <Swiper></Swiper>
